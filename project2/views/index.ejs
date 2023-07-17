@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project 2 Assessment Prep</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Car Collection</h1>
+    <% if (cars.length === 0) { %>
+      <p>There is no car</p>
+    <% } else { %>
+      <% cars.forEach(car => { %>
+        <p>Make: <%= car.make %></p>
+        <p>Model: <%= car.model %></p>
+        <p>Fulltank: <%= car.fullTank ? 'Full' : 'Empty' %></p>
+        <br>
+      <% }) %>
+      <% } %>
+
+      <form action="/cars" method="POST">
+        <label for="make">Make:</label>
+        <input type="text" id="make" name="make" required>
+        <label for="model">Model:</label>
+        <input type="text" id="model" name="model" required>
+        <button type="submit">ADD CAR</button>
+      </form>
+
+
+
+  </body>
+</html>
